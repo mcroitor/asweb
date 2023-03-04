@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+  httpd:
+    build:
+      context: ./
+      dockerfile: Dockerfile.httpd
+    networks:
+      - internal
+    ports:
+      - "8000:80"
+    volumes:
+      - "./site/:/var/www/html/:ro"
+  php:
+    build:
+      context: ./
+      dockerfile: Dockerfile.php-fpm
+    networks:
+      - internal
+    volumes:
+      - "./site/:/var/www/html/:ro"
+  db:
+    build: 
+      context: ./
+      dockerfile: Dockerfile.db
+    networks:
+      - internal
+    environment:
+     MARIADB_DATABASE: sample
+     MARIADB_USER: sampleuser
+     MARIADB_PASSWORD: samplepassword
+     MARIADB_ROOT_PASSWORD: rootpassword
+    volumes:
+      - "./database/:/var/lib/mysql"
+networks:
+  internal: {}

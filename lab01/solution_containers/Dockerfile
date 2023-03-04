@@ -1,3 +1,5 @@
 FROM debian:latest
-COPY ./site/ /var/www/html/
-CMD ["sh", "-c", "echo hello from $HOSTNAME"]
+
+# install web server + mysql + php
+RUN apt-get update && apt-get -y upgrade && \
+    apt-get -y install apache2 php mysql-common libapache2-mod-php7.4
