@@ -158,7 +158,7 @@ Executați comanda:
 docker-compose up -d
 ```
 
-În baza imaginilor create va fi pornite containere. Deschideți în browser pagina: http://wordpress.localhost și efectuați instalarea site-ului. __Fiți atent la moment că containere văd unul pe altul în rețea virtuală internă după nume. Având această în vedere la configurarea conexiunii cu baza de date trebuie să specificați host egal cu nume container, în cazul nostru `mariadb`__. Nume utilizator bazei de date, parola lui și denumirea bazei de date puteți găsi în fișier `docker-compose.yml`.
+În baza imaginilor create va fi pornite containere. Deschideți în browser pagina: http://wordpress.localhost și efectuați instalarea site-ului. __Fiți atent, fiindcă containere văd unul pe altul în rețea virtuală internă după nume. Având această în vedere la configurarea conexiunii cu baza de date trebuie să specificați host egal cu nume container, în cazul nostru `mariadb`__. Nume utilizator bazei de date, parola lui și denumirea bazei de date puteți găsi în fișier `docker-compose.yml`.
 
 Efectuați consecutiv următoarele comenzi:
 
