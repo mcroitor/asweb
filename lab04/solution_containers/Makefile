@@ -1,4 +1,5 @@
-CACHE=--no-cache
+# CACHE=--no-cache
+CACHE=
 
 .PHONY: all
 
@@ -15,3 +16,10 @@ down:
 
 remove:
 	docker-compose rm
+
+help:
+	@echo "make - executes sequentially 'down', 'remove', 'build', 'up' actions"
+	@echo "make down - stop containers"
+	@echo "make remove - remove containers"
+	@echo "make build - build containers"
+	@echo "make up - start containers"

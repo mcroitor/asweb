@@ -32,5 +32,19 @@ services:
      MARIADB_ROOT_PASSWORD: rootpassword
     volumes:
       - "./database/:/var/lib/mysql"
+  cron:
+    build:
+      context: ./
+      dockerfile: Dockerfile.cron
+    environment:
+      USERNAME: mcroitor
+      MARIADB_DATABASE: sample
+      MARIADB_USER: sampleuser
+      MARIADB_PASSWORD: samplepassword
+    volumes:
+      - "./backups/:/var/backups/"
+      - "./site/wordpress/:/var/www/html/"
+    networks:
+      - internal
 networks:
   internal: {}

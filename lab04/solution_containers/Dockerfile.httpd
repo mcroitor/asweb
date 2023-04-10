@@ -1,6 +1,5 @@
 FROM httpd:2.4
 
-RUN apt update && apt upgrade -y && apt install logrotate
+RUN apt update && apt upgrade -y
 
 COPY ./files/httpd/httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY ./files/httpd/httpdlog.conf /etc/logrotate.d
