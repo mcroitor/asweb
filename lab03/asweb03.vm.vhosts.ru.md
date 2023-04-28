@@ -54,7 +54,11 @@ sudo a2ensite 02-drupal
 
 ## Запуск и тестирование
 
-Перегрузите Apache Web Server.
+Перегрузите Apache Web Server:
+
+```shell
+systemctl reload apache2
+```
 
 В браузере проверьте доступность сайтов  `http://drupal.localhost` и `http://phpmyadmin.localhost`. Завершите установку сайтов.
     

@@ -54,7 +54,11 @@ sudo a2ensite 02-drupal
 
 ## Pornirea și testarea
 
-Reporniți Apache Web Server.
+Reporniți Apache Web Server:
+
+```shell
+systemctl reload apache2
+```
 
 Verificați în browser accesibilitatea sit-urilor `http://drupal.localhost` și `http://phpmyadmin.localhost`. Instalați ambele sit-uri.
     
